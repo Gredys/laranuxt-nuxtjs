@@ -1,4 +1,10 @@
 export default {
+  // Server configuration: https://nuxtjs.org/docs/2.x/features/configuration
+  server: {
+    port: 3100, // default: 3000
+    host: 'localhost', // default: localhost,
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'laranuxt',
@@ -25,7 +31,12 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false
+    }
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -38,7 +49,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: '/'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
